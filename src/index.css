@@ -1,0 +1,22 @@
+@import url("leaflet/dist/leaflet.css");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.leaflet-container {
+    width: 100%;
+    height: 100vh;
+}
+
+@layer utilities {
+  .result-border-right::after {
+    content: ""; /* This is necessary for the pseudo element to work. */ 
+    position: absolute; /* This will put the pseudo element on its own line. */
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 80%; /* Change this to whatever width you want. */
+    border-right: 1px solid theme("colors.userLightGray");
+  }
+}
